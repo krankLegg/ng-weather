@@ -1,6 +1,8 @@
 export const environment = {
   production: false,
-  weatherApiBaseUrl: 'https://api.tomorrow.io/v4/weather/realtime',
-  apikey: 'bf8NOwf972xq9FFRY3eGNC6s32gw2Af9',
-  units: 'imperial',
+  weatherApiBaseUrl: 'https://open-weather13.p.rapidapi.com',
+  XRapidAPIKeyHeaderName: 'X-RapidAPI-Key',
+  XRapidAPIKeyHeaderValue: 'c25fb6671bmshed69f7b063fdcdcp18bcc7jsn27459704185b',
+  XRapidAPIHostHeaderName: 'X-RapidAPI-Host',
+  XRapidAPIHostHeaderValue: 'open-weather13.p.rapidapi.com',
 };

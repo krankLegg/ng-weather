@@ -1,37 +1,53 @@
 export interface WeatherData {
-  data: Data;
-  location: Location;
-}
-
-export interface Data {
-  time: string;
-  values: Values;
-}
-
-export interface Values {
-  cloudBase: any;
-  cloudCeiling: any;
-  cloudCover: number;
-  dewPoint: number;
-  freezingRainIntensity: number;
-  humidity: number;
-  precipitationProbability: number;
-  pressureSurfaceLevel: number;
-  rainIntensity: number;
-  sleetIntensity: number;
-  snowIntensity: number;
-  temperature: number;
-  temperatureApparent: number;
-  uvHealthConcern: number;
-  uvIndex: number;
+  coord: Coord;
+  weather: Weather[];
+  base: string;
+  main: Main;
   visibility: number;
-  weatherCode: number;
-  windDirection: number;
-  windGust: number;
-  windSpeed: number;
+  wind: Wind;
+  clouds: Clouds;
+  dt: number;
+  sys: Sys;
+  timezone: number;
+  id: number;
+  name: string;
+  cod: number;
 }
 
-export interface Location {
-  lat: number;
+export interface Coord {
   lon: number;
+  lat: number;
+}
+
+export interface Weather {
+  id: number;
+  main: string;
+  description: string;
+  icon: string;
+}
+
+export interface Main {
+  temp: number;
+  feels_like: number;
+  temp_min: number;
+  temp_max: number;
+  pressure: number;
+  humidity: number;
+}
+
+export interface Wind {
+  speed: number;
+  deg: number;
+}
+
+export interface Clouds {
+  all: number;
+}
+
+export interface Sys {
+  type: number;
+  id: number;
+  country: string;
+  sunrise: number;
+  sunset: number;
 }
