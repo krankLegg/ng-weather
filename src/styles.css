@@ -1,6 +1,6 @@
 :root {
   --blue-1: #3c429e;
-  --blue-1: #4c52ad;
+  --blue-2: #4c52ad;
   --yellow-1: #fac742;
   --white: #fff;
   --grey-1: #ededed;
@@ -31,6 +31,7 @@ body {
   height: 80vh;
   background-color: var(--blue-2);
   border-radius: 20px;
+  border: 1px black;
   box-shadow: 10px 10px 10px var(--shadow-dark);
 }
 
