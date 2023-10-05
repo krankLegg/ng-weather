@@ -10,15 +10,26 @@ import { WeatherData } from './models/weather.model';
 export class AppComponent implements OnInit {
   constructor(private weatherService: WeatherService) {}
 
+  cityName: string = 'Tampa';
   weatherData?: WeatherData;
 
   ngOnInit(): void {
-    this.weatherService.getWeatherData('Tampa').subscribe({
+    this.getWeatherData(this.cityName);
+    this.cityName = '';
+  }
+  title = 'Weather App';
+
+  onSubmit() {
+    this.getWeatherData(this.cityName);
+    this.cityName = '';
+  }
+
+  private getWeatherData(cityName: string) {
+    this.weatherService.getWeatherData(cityName).subscribe({
       next: (response) => {
         this.weatherData = response;
         console.log(response);
       },
     });
   }
-  title = 'Weather App';
 }
