@@ -4,12 +4,13 @@
     <img src="../assets/mild-day.png" alt="mild" *ngIf="14 > 15" />
     <img src="../assets/cold-night.png" alt="cold" *ngIf="14 <= 15" />
     <div class="weather-data">
-      <div class="location">Riverview</div>
+      <div class="location">Tampa</div>
       <div class="temperature">
         {{ weatherData.data.values.temperature | number : "1.0-0" }}°F
       </div>
       <div class="feels-like">
-        Feels Like: {{ weatherData.data.values.temperatureApparent }}°F
+        Feels Like:
+        {{ weatherData.data.values.temperatureApparent | number : "1.0-0" }}°F
       </div>
     </div>
   </div>
@@ -20,19 +21,11 @@
     <div class="more-info-container">
       <div class="info-block">
         <div class="info-block-label">
-          <img src="../assets/icons/temp-min.png" alt="" />
-          <span>min</span>
-        </div>
-        <div class="info-block-value">10°F</div>
-      </div>
-
-      <div class="info-block">
-        <div class="info-block-label">
-          <img src="../assets/icons/temp-max.png" alt="" />
-          <span>max</span>
+          <img src="../assets/icons/rain2.png" alt="" />
+          <span>Rain</span>
         </div>
         <div class="info-block-value">
-          {{ weatherData.data.values.temperatureApparent }}°F
+          {{ weatherData.data.values.precipitationProbability }}
         </div>
       </div>
 
@@ -48,7 +41,17 @@
 
       <div class="info-block">
         <div class="info-block-label">
-          <img src="../assets/icons/wind.png" alt="" />
+          <img src="../assets/icons/uv-index.png" alt="" />
+          <span>UV Index</span>
+        </div>
+        <div class="info-block-value">
+          {{ weatherData.data.values.uvIndex }}%
+        </div>
+      </div>
+
+      <div class="info-block">
+        <div class="info-block-label">
+          <img src="../assets/icons/wind2.png" alt="" />
           <span>wind</span>
         </div>
         <div class="info-block-value">
